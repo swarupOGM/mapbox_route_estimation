@@ -1,5 +1,8 @@
 #COOLMAP ROUTE PATH ESTIMATION
 
+Install
+
+pip install cool-mapMapboxRoute
 
 Instructions
 
