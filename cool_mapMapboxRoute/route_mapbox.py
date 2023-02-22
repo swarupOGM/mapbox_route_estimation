@@ -2,13 +2,11 @@ import requests,json
 
 class CoolmapRoutePath():
 
-    POOL_RECYCLE=1
-    MAPBOX_API_PUBLIC_KEY="pk.eyJ1IjoiYWdnZGlyZWN0IiwiYSI6ImNqcW9lamRoMjAweGkzeHFlcGcwdHdlcmQifQ.Lxh5XIOkWFRqIE9hgR0RaA"
-    MAX_OVERFLOW=-1
     headers = {'Content-Type': 'application/json', 'Authorization': ''}
-    def __init__(self, from_lat_log,to_lat_log ):
+    def __init__(self, from_lat_log,to_lat_log, mapbox_api_key ):
         self.from_lat_log = from_lat_log
         self.to_lat_log = to_lat_log
+        self.mapbox_api_key = mapbox_api_key
 
     @classmethod
     def estimated_time_in_minute(cls, resp):
@@ -48,4 +46,4 @@ class CoolmapRoutePath():
                                     }
                 }
 
-        return requests.get('https://api.mapbox.com/valhalla/v1/route?json={0}&access_token={1}'.format(json.dumps(param), self.MAPBOX_API_PUBLIC_KEY), headers=self.headers).json()
+        return requests.get('https://api.mapbox.com/valhalla/v1/route?json={0}&access_token={1}'.format(json.dumps(param), self.mapbox_api_key), headers=self.headers).json()
