@@ -20,7 +20,7 @@ time to cover the distance based on there pick-up and delivery latitude and long
 ## Usage/Examples
 
 ```python
-from coolmaproute_path import CoolmapRoutePath
+from coolmaproutepath import CoolmapRoutePath
 
 cool_obj = CoolmapRoutePath("38.24265,-76.56296","39.2262,-76.81595",<map_box_api key> ))
 
