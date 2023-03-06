@@ -55,7 +55,7 @@ Example:
 cool_obj.estimated_distance(required_unit='m')
 ```
      
-       "m" - REturn the distance time in Miles
+        "m" - REturn the distance time in Miles
         "k" - Return the distance time in Kilometer
         "n" - Reeturn the distance time in Nautical Mile
         "t" - Reeturn the distance time in Meter
