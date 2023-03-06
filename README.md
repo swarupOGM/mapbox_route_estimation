@@ -1,46 +1,91 @@
-#COOLMAP ROUTE PATH ESTIMATION
+# pypi-packages
+Python util functions
 
-Install
+`pip3 install coolmaproute_path` to install packages
 
-pip install cool-mapMapboxRoute
 
-Instructions
+## What is it
 
-from cool_mapMapboxRoute.route_mapbox import CoolmapRoutePath
+Support for coolmap path,estimated_time and estimated distance.
+This module provides the path co-ordinate, estimated distance and estimated
+time to cover the distance based on there pick-up and delivery latitude and longitude.
 
-    obj = CoolmapRoutePath(<from_lat_log>,<to_lat_log>,<mapbox_api_key>)
 
-    #EXAMPLE:
-        obj = CoolmapRoutePath("34.01076,-117.44858","33.94559,-118.18381",<mapbox_api_key>)
-
-#to get the path of route
-    obj.get_mapbox_response()
-
-#return estimated time of route
-    obj.estimated_time_in_minute()
-
-#return estimated distance of route
-    obj.estimated_distance_in_mile
+    CoolmapRoutePath(<from_lat_log>,<to_lat_log>,<map_box_api key> ))
 
 
 
 
 
+## Usage/Examples
+
+```python
+from coolmaproute_path import CoolmapRoutePath
+
+cool_obj = CoolmapRoutePath("38.24265,-76.56296","39.2262,-76.81595",<map_box_api key> ))
 
 
 
+```
+## Method to get the estimated time
+
+```python
+cool_obj.estimated_time(required_unit='m')
+```
+     
+        "m" - Return the estimated time in Minuted
+        "h" - Return the estimated time in Hour
+        "s" - Reeturn the estimated time in Second
 
 
+Example:
+    
+    Input:
+
+    >>CoolMapRoutePth_Obj>.estimated_time('s')
+
+    Output:
+
+    >>'6656.05 Second'
 
 
+## Method to get the estimated distance
+
+```python
+cool_obj.estimated_distance(required_unit='m')
+```
+     
+       "m" - REturn the distance time in Miles
+        "k" - Return the distance time in Kilometer
+        "n" - Reeturn the distance time in Nautical Mile
+        "t" - Reeturn the distance time in Meter
 
 
+Example:
+    
+    Input:
+
+    >>cool_obj.estimated_distance('t')
+
+    Output:
+
+    >>'144062.0 Meter'
 
 
+## Method to get the path
+
+```python
+cool_obj.get_path()
+```
 
 
+Example:
+    
+    Input:
 
+    >>cool_obj.get_path('t')
 
+    Output:
 
-
+    >>'38.242287,-76.56314400000001;38.242289,-76.563149;...'
 
