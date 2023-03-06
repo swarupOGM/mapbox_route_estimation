@@ -1,7 +1,7 @@
 # pypi-packages
 Python util functions
 
-`pip3 install coolmaproute_path` to install packages
+`pip3 install coolmaproutepath` to install packages
 
 
 ## What is it
